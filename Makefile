@@ -5,8 +5,8 @@ include $(cnf)
 export $(shell sed 's/=.*//' $(cnf))
 
 # grep the git hash of project
-#VERSION=$(shell ./version.sh)
-VERSION=09284756
+VERSION=$(shell ./version.sh)
+#VERSION=09284756
 
 #cleanup the docker container.Stop and remove the container
 cleanup=$(shell ./dockerclean.sh $(APP_NAME))
