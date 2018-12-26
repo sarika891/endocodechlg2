@@ -1,3 +1,3 @@
 #!/bin/bash
-version=`git reverse-parse HEAD`
+version=`git rev-parse HEAD`
 echo $version
