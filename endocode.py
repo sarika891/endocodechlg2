@@ -45,7 +45,7 @@ def api_id():
 
             return fs
         else:
-            fs="Hello World Strange"
+            fs="Hello World Stranger"
             return fs
     except Exception as e:
 	    return str(e)
