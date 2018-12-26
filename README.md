@@ -8,11 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the service and how to install them
 
 * centos 7  
-* make  
-* docker  
+* make 
+* git (sudo yum install git)
+* docker  (Run yum install docker && sudo service docker start)
 
 ## Installation and Usage instructions
 
