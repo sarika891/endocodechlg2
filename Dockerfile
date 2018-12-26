@@ -11,5 +11,5 @@ WORKDIR /chlng2
 RUN pwd
 ADD endocode.py /chlng2/
 RUN ls -l
-EXPOSE 8090
+EXPOSE 8080
 CMD [ "python", "/chlng2/endocode.py &"]
