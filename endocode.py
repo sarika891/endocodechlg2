@@ -21,7 +21,7 @@ app.logger.addHandler(logHandler)
 def home():
     return "<h1>Welcome to my small application</h1><p>This site is a prototype API hosting only two calls.</p>"
 
-@APP.errorhandler(404)
+@app.errorhandler(404)
 def not_found(error):
     """
     Gives error message when any bad requests are made.
