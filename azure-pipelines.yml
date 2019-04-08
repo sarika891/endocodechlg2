@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  dockerId: my-docker-id  # Replace with your Docker ID for Docker Hub or the admin user name for the Azure Container Registry
+  dockerId: TestCD  # Replace with your Docker ID for Docker Hub or the admin user name for the Azure Container Registry
   imageName: my-image-name  # Replace with the name of the image you want to publish
 
 steps:
@@ -19,4 +19,4 @@ steps:
     docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName)
   env:
-    pswd: $(dockerPassword)        # Define dockerPassword in the Variables tab of this pipeline in Pipelines page of web interface
+    pswd: "wPeL+baFwdvD5d3IZJqzqu4ZKt8MoxGW"        # Define dockerPassword in the Variables tab of this pipeline in Pipelines page of web interface
