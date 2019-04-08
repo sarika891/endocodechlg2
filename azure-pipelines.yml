@@ -15,7 +15,7 @@ variables:
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
-   docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
+   docker login -u $(dockerId) -p 'wPeL+baFwdvD5d3IZJqzqu4ZKt8MoxGW' $(dockerId).azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName)
   env:
     pswd: wPeL+baFwdvD5d3IZJqzqu4ZKt8MoxGW
