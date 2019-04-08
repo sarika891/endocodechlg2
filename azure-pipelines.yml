@@ -11,7 +11,12 @@ pool:
 
 variables:
   imageName: 'your-container-image-name:$(build.buildId)'
+  dockerId: TestCD
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
+   docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
+    docker push $(dockerId).azurecr.io/$(imageName)
+  env:
+    pswd: $(dockerPassword) 
   displayName: 'docker build'
