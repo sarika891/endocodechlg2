@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  dockerId: password  # Replace with your Docker ID for Docker Hub or the admin user name for the Azure Container Registry
+  dockerId: TestCD  # Replace with your Docker ID for Docker Hub or the admin user name for the Azure Container Registry
   imageName: testcdsc  # Replace with the name of the image you want to publish
   pswd: "wPeL+baFwdvD5d3IZJqzqu4ZKt8MoxGW"
 steps:
