@@ -1,12 +1,12 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: testcdsc
+  name: testcdsc-deployment
 spec:
   selector:
     matchLabels:
       app: testcdsc
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -20,12 +20,21 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: testcdsc
+  name: testcdsc-service
 spec:
   selector:
     app: testcdsc
   ports:
   - protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 8080
   type: LoadBalancer
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: testcdsc-ingress
+spec:
+  backend:
+    serviceName: testcdsc
+    servicePort: 8080
