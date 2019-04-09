@@ -1,0 +1,32 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: testcdsc
+spec:
+  selector:
+    matchLabels:
+      app: testcdsc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: testcdsc
+    spec:
+      containers:
+      - name: testcdsc
+        image: testcd.azurecr.io/testcdsc:latest
+        ports:
+        - containerPort: 8080
+		
+apiVersion: v1
+kind: Service
+metadata:
+  name: testcdsc
+spec:
+  selector:
+    app: testcdsc
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
