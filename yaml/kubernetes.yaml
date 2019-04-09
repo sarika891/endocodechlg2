@@ -12,11 +12,13 @@ spec:
       labels:
         app: testcdsc
     spec:
-      containers:
+     containers:
       - name: testcdsc
         image: testcd.azurecr.io/testcdsc:latest
         ports:
-        - containerPort: 8080		
+        - containerPort: 8080
+     imagePullSecrets:
+      - name: acr-auth
 apiVersion: v1
 kind: Service
 metadata:
