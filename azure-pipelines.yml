@@ -18,3 +18,8 @@ steps:
     docker build -t $(dockerId).azurecr.io/$(imageName) .
     docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName)
+- task: PublishBuildArtifacts@1
+  displayName: 'publish yaml folder as an artifact'
+  inputs:
+    artifactName: 'yaml'
+    pathToPublish: 'yaml'
