@@ -19,6 +19,7 @@ spec:
         - containerPort: 8080
      imagePullSecrets:
       - name: acrauth
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -31,7 +32,7 @@ spec:
     port: 8080
     targetPort: 8080
   type: LoadBalancer
-
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
